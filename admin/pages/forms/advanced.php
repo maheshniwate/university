@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])) // If session is not set then redirect to Login Page
 }
 
 if(isset($_GET['delsr_no'])){
-  $sr_no=mysqli_real_escape_string($conn,$_GET['delsr_no']);
+  $sr_no=($conn,$_GET['delsr_no']);
   $sql=mysqli_query($conn,"delete from instructor where id='$sr_no'");
   if($sql=1){
     header("location:advanced.php");
